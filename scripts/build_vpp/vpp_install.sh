@@ -63,6 +63,9 @@ fi
 if [ -d /usr/lib/x86_64-linux-gnu/vpp_plugins ]; then
     sudo rm -rf /usr/lib/x86_64-linux-gnu/vpp_plugins/*
 fi
+if [ -d /usr/lib/x86_64-linux-gnu/vpp_api_test_plugins ]; then
+    sudo rm -rf /usr/lib/x86_64-linux-gnu/vpp_api_test_plugins/*
+fi
 
 
 cd vpp
@@ -78,6 +81,7 @@ fi
 copy_vpp_binaries $VPP_PATH_BINARIES/bin             /usr/bin
 copy_vpp_binaries $VPP_PATH_BINARIES/lib             /usr/lib/x86_64-linux-gnu
 copy_vpp_binaries $VPP_PATH_BINARIES/lib/vpp_plugins /usr/lib/x86_64-linux-gnu/vpp_plugins
+copy_vpp_binaries $VPP_PATH_BINARIES/lib/vpp_api_test_plugins /usr/lib/x86_64-linux-gnu/vpp_api_test_plugins
 if [ ! -f $INSTALL_ROOT/etc/vpp/startup.conf ]; then
     copy_vpp_binaries $VPP_PATH/src/vpp/conf /etc/vpp "startup.conf"
 fi
