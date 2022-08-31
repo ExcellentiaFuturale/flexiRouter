@@ -68,7 +68,7 @@ cd -
 
 cd router
 
-cmd="sed -i 's#AM_CFLAGS = -Wall -I@TOOLKIT_INCLUDE@.*#AM_CFLAGS = -Wall -I@TOOLKIT_INCLUDE@ -DCLIB_DEBUG -DCLIB_VEC64=0 -I../../vpp/src -I$VPP_PATH_BINARIES -I../netlink -L../netlink/.libs#g' Makefile.am"
+cmd="sed -i 's#AM_CFLAGS = -Wall -I@TOOLKIT_INCLUDE@ -I/usr/include/libnl3/.*#AM_CFLAGS = -Wall -I@TOOLKIT_INCLUDE@ -I/usr/include/libnl3/ -DCLIB_DEBUG -DCLIB_VEC64=0 -I../../vpp/src -I$VPP_PATH_BINARIES -I../netlink -L../netlink/.libs#g' Makefile.am"
 echo $smd
 eval $cmd
 
