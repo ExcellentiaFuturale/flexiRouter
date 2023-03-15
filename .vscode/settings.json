@@ -1,0 +1,7 @@
+{
+    "cmake.configureOnOpen": false,
+    "files.associations": {
+        "api_errno.h": "c",
+        "tap.h": "c"
+    }
+}
